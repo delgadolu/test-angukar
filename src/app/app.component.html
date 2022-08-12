@@ -1,0 +1,17 @@
+<section class="view">
+    <app-navbar></app-navbar>
+    <div class="map-container"
+        leaflet
+        [leafletOptions]="mapOptions"
+        [leafletLayer]="baseLayer"
+        [leafletFitBounds]="mapFitBounds"
+        (leafletMapReady)="onMapReady($event)"
+        
+    ></div>
+    <!-- <app-analytic-graph></app-analytic-graph> -->
+</section>
+<router-outlet></router-outlet>
+
+
+<!-- <app-analytic-graph></app-analytic-graph>
+<app-tool-bar [childMessage]="parentMessage"></app-tool-bar> -->

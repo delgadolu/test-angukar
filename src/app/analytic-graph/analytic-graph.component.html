@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label>Estadistica</label>
+            <select formControlName="type" class="form-control" (change)="changeWebsite($event)" placeholder="Seleccione Grafico">
+                <option>Seleccione Grafico</option>
+                <option *ngFor="let type of types" [value]='type.id'>{{type.name}}</option>
+            </select>
+        </div>
+    </form>
+    <p>analytic-graph works!</p>
+    <highcharts-chart 
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      style="width: 100%; height: 400px; display: block;"
+    ></highcharts-chart>
+</div>
+
